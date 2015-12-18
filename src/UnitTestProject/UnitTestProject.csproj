@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6B37F9A-FF2E-40FA-952C-650A4E75DEC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTestProject</RootNamespace>
+    <AssemblyName>UnitTestProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Service References\ActuateAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTestService.cs" />
+    <Compile Include="UnitTestREST.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\biz.dfch.CS.Birt.Client\biz.dfch.CS.Birt.Client.csproj">
+      <Project>{bf229916-775a-47a7-a526-36ab14f9991b}</Project>
+      <Name>biz.dfch.CS.Birt.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ActuateAPI\ActuateAPI.wsdl" />
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.AdministrateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.administrateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CallOpenSecurityLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.callOpenSecurityLibraryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CancelJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.cancelJobResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CancelReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.cancelReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CancelRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.cancelRequestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CancelRequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.cancelRequestsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CheckReportResourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.checkReportResourcesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CloseInfoObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.closeInfoObjectResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CreateDatabaseConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.createDatabaseConnectionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CreateIOCacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.createIOCacheResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CreateParameterValuesFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.createParameterValuesFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CreateQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.createQueryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CreateResourceGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.createResourceGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.CubeExtractionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.cubeExtractionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DataExtractionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.dataExtractionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DeleteDatabaseConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.deleteDatabaseConnectionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DeleteIOCacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.deleteIOCacheResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DeleteResourceGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.deleteResourceGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DownloadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.downloadFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.DownloadTransientFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.downloadTransientFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ExecuteQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.executeQueryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ExecuteReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.executeReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ExecuteVolumeCommandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.executeVolumeCommandResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ExportParameterDefinitionsToFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.exportParameterDefinitionsToFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ExtractParameterDefinitionsFromFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.extractParameterDefinitionsFromFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.FetchInfoObjectDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.fetchInfoObjectDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetAggregateLogFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getAggregateLogFilesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetAllCounterValuesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getAllCounterValuesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetBookmarksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getBookmarksResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCapabilitiesByCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCapabilitiesByCategoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCapabilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCapabilitiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCapabilityCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCapabilityCategoriesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetChannelACLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getChannelACLResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetConnectionPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getConnectionPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetConnectionPropertyAssigneesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getConnectionPropertyAssigneesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetContentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getContentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCounterValuesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCounterValuesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCubeMetaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCubeMetaDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetCustomFormatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getCustomFormatResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDatabaseConnectionDefinitionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDatabaseConnectionDefinitionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDatabaseConnectionParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDatabaseConnectionParametersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDatabaseConnectionTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDatabaseConnectionTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDataExtractionFormatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDataExtractionFormatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDocumentConversionOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDocumentConversionOptionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetDynamicDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getDynamicDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetEmbeddedComponentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getEmbeddedComponentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFactoryServiceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFactoryServiceInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFactoryServiceJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFactoryServiceJobsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFileACLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFileACLResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFileCreationACLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFileCreationACLResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFileDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFileDetailsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFileTypeParameterDefinitionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFileTypeParameterDefinitionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFolderItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFolderItemsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetFormatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getFormatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetInfoObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getInfoObjectResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetIOCacheDefinitionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getIOCacheDefinitionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetJavaReportEmbededComponentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getJavaReportEmbededComponentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetJavaReportTOCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getJavaReportTOCResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetJobDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getJobDetailsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetLatestPartOfAggregateLogFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getLatestPartOfAggregateLogFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetLicenseTermsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getLicenseTermsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetMetaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getMetaDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetNoticeJobDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getNoticeJobDetailsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetPageCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getPageCountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetPageNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getPageNumberResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetParameterPickListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getParameterPickListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getQueryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetReportParametersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getReportParametersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetResourceGroupInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getResourceGroupInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetResourceGroupListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getResourceGroupListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSAMLAuthnRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSAMLAuthnRequestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSAMLLogoutRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSAMLLogoutRequestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSavedSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSavedSearchResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetServerResourceGroupConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getServerResourceGroupConfigurationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSPMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSPMetadataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetStaticDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getStaticDataResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetStyleSheetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getStyleSheetResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSyncJobInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSyncJobInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSystemInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSystemInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSystemMDSInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSystemMDSInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSystemPrintersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSystemPrintersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSystemServerListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSystemServerListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetSystemVolumeNamesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getSystemVolumeNamesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetTOCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getTOCResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserExtendedPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserExtendedPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserGroupExtendedPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserGroupExtendedPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserGroupProductAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserGroupProductAccessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserLicenseOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserLicenseOptionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserLoadingStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserLoadingStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserPreferenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserPreferenceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetUserPrinterOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getUserPrinterOptionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GetVolumePropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.getVolumePropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GrantUserGroupCapabilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.grantUserGroupCapabilitiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.GrantUserGroupProductAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.grantUserGroupProductAccessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.InstallAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.installAppResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.loginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ODBOTunnelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.oDBOTunnelResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.OpenInfoObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.openInfoObjectResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.PingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.pingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.PrintReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.printReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ProcessSAMLLogoutMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.processSAMLLogoutMessageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.ResetCountersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.resetCountersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.RevokeUserGroupCapabilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.revokeUserGroupCapabilitiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.RevokeUserGroupProductAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.revokeUserGroupProductAccessResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SaveSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.saveSearchResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SaveTransientReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.saveTransientReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SearchReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.searchReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectChannelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectChannelsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectFilesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectFileTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectFileTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectGroupsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectJavaReportPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectJavaReportPageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectJobNoticesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectJobNoticesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectJobSchedulesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectJobSchedulesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectJobsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectJobsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectPageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectRolesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectUserGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectUserGroupsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SelectUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.selectUsersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SetConnectionPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.setConnectionPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SetServerResourceGroupConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.setServerResourceGroupConfigurationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SetUserExtendedPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.setUserExtendedPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SetUserGroupExtendedPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.setUserGroupExtendedPropertiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SetUserPreferenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.setUserPreferenceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SubmitJobResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.submitJobResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.SystemLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.systemLoginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.UpdateDatabaseConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.updateDatabaseConnectionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.UpdateIOCacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.updateIOCacheResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.UpdateResourceGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.updateResourceGroupResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.UploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.uploadFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.VerifyAuthIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.verifyAuthIDResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.WaitForExecuteReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActuateAPI\UnitTestProject.ActuateAPI.waitForExecuteReportResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ActuateAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActuateAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActuateAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActuateAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
