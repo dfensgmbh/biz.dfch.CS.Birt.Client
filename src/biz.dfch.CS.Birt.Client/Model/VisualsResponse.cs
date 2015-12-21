@@ -35,6 +35,5 @@ namespace biz.dfch.CS.Birt.Client.Model
 //  "OutputFileType": "RPTDOCUMENT",
 //  "ConnectionHandle": "bAq+y9HJrv5y7XC/gX7MO721WvOI/w6jmbZwg7PYF19Cq3057d+JTeUKSSPpu8CJEdtWledo6r5Fb4yX4Ucvyt84/3qNdvlyy0KeNCFv+DHvnS/OoA2+eFOdmgaRxfXY2DvON58eYK9UFLLwuiIIjA12d+A6VRbqDUEh4QXsTxDX9ote2naiNZHBTayRPdiPnkpXFb/ER9bbf7jpAzann8n/7A54IQhNBUxkWBbVl3CCqeL5TKDKjGg7DqFU5Ov9J+W4BZWdgprSVJ65O6oFp/DVB9L5jaOI"
 //}
-
     }
 }

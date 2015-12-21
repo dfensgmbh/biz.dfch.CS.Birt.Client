@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Web;
 
 namespace biz.dfch.CS.Activiti.Client
 {
@@ -279,7 +274,6 @@ namespace biz.dfch.CS.Activiti.Client
             return this.Invoke(HttpMethod.Get.ToString(), uri, null, null, null);
         }
         #endregion
-
     }
 }
 

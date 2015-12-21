@@ -58,8 +58,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="UnitTestService.cs" />
-    <Compile Include="UnitTestREST.cs" />
+    <Compile Include="SoapClientTest.cs" />
+    <Compile Include="BirtClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

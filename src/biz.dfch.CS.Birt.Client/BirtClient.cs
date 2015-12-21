@@ -1,19 +1,29 @@
-﻿using System;
+﻿/**
+ * Copyright 2015 d-fens GmbH
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Diagnostics.Contracts;
 using biz.dfch.CS.Activiti.Client;
-using System.Diagnostics;
-using Newtonsoft.Json;
 using System.Collections;
 using biz.dfch.CS.Birt.Client.Model;
-using System.Web;
-using System.IO;
-using System.Net;
+using Newtonsoft.Json;
 
 namespace biz.dfch.CS.Birt.Client
 {
@@ -63,7 +73,6 @@ namespace biz.dfch.CS.Birt.Client
         {
             Contract.Assume(!string.IsNullOrEmpty(authId));
             List<string> templates = new List<string>();
-
 
             return templates;
         }
@@ -129,7 +138,6 @@ namespace biz.dfch.CS.Birt.Client
             var response = rc.Invoke("GET", "files/" + fileId + "/download", paramValues, headers, "");
             VisualsResponse result = JsonConvert.DeserializeObject<VisualsResponse>(response);
         }
-       
         #endregion
 
        #region Properties
@@ -143,7 +151,6 @@ namespace biz.dfch.CS.Birt.Client
         }
 
        #endregion
-
     }
 
 
@@ -178,7 +185,7 @@ namespace biz.dfch.CS.Birt.Client
 
 
 
-    // REport erstellen:
+    // Report erstellen:
     //        POST http://schefdev:5000/ihub/v1/visuals/904000000100/execute HTTP/1.1
     //Accept: application/json
     //Content-Type: application/x-www-form-urlencoded

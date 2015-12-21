@@ -15,21 +15,27 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections;
 
-namespace biz.dfch.CS.Birt.Client.Model
+namespace UnitTestProject
 {
-    public class File
+    [TestClass]
+    public class SoapClientTest
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string FileType { get; set; }
-        public long PageCount { get; set; }
-        public long Size { get; set; }
-        public DateTime TimeStamp { get; set; }
-        public long Version { get; set; }
-        public string Owner { get; set; }
+        [TestMethod]
+        [TestCategory("SkipOnTeamCity")]
+        public void Login()
+        {
+            ActuateAPI.ActuateSoapPortClient ws = new ActuateAPI.ActuateSoapPortClient();
+
+            ActuateAPI.Login login = new ActuateAPI.Login();
+            login.User = "Administrator";
+            login.Password = "";
+            login.UserSetting = true;
+            login.UserSettingSpecified = true;
+
+            ws.login(login);
+        }
     }
 }
